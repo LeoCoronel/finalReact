@@ -267,60 +267,27 @@ body {
   color: #F9564F;
 }
 
-@media (max-width: 1080px) {
-  .gallery__one, .gallery__two {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-}
-.gallery__one .image {
-  background-image: url("../../assets/img/bg-1.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  width: 50%;
-  filter: grayscale(80%);
-}
-.gallery__two .image {
-  background-image: url("../../assets/img/bg-2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  width: 50%;
-  filter: grayscale(80%);
-}
-.gallery__one, .gallery__two {
-  height: 100vh;
+.gallery {
   width: 100%;
+  height: 100vh;
+  border: 1px solid red;
   display: flex;
+  flex-direction: row;
 }
-.gallery__one .desc, .gallery__two .desc {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.gallery__image {
+  height: 100vh;
 }
-.gallery__one .desc p, .gallery__two .desc p {
-  width: 50ch;
-  margin-top: 15px;
+.gallery__image img {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(80%);
 }
-.gallery__one .desc button, .gallery__two .desc button {
-  width: 100px;
-  height: 35px;
-  margin-top: 15px;
-  background: none;
-  border: 2px solid #6F6F6F;
-  margin-left: 20px;
-  cursor: pointer;
-  transition: 0.2s ease-in;
+.gallery .shoe {
+  width: 300px;
+  height: 300px;
+  border: 1px solid blue;
 }
-.gallery__one .desc button:hover, .gallery__two .desc button:hover {
-  background-color: #6F6F6F;
-  color: #fff;
-}
+
 .shop__gallery {
   height: 300px;
   background-image: linear-gradient(black, black), url("../../assets/img/bg-3.jpg");

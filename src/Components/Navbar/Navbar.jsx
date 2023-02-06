@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import Logo from "../../assets/icons/Sneakers.png";
 import Cart from "../../assets/icons/Cart.png";
 import User from "../../assets/icons/User.png";
@@ -44,10 +44,7 @@ const Navbar = () => {
             </li>
           </ul>
         </nav>
-        
       </header>
-      
-      {/* <div className="header__logo__container"></div> */}
     </>
   );
 };

@@ -1,72 +1,92 @@
 .gallery {
-    @media(max-width: 1080px) {
-        &__one, &__two {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+  width: 100%;
+  height: 100vh;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+
+  &__image {
+    height: 100vh;
+    img {
+      width: 100%;
+      height: 100%;
+      filter: grayscale(80%);
     }
-    &__one {
-        .image {
-            background-image: url('../../assets/img/bg-1.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
-            width: 50%;
-            filter: grayscale(80%);
-        }
-    }
+  }
 
-    &__two {
-        .image {
-            background-image: url('../../assets/img/bg-2.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
-            width: 50%;
-            filter: grayscale(80%);
-        }
-    }
-    &__one, &__two {
-        height: 100vh;
-        width: 100%;
-        display: flex;
+  .shoe {
+    width: 300px;
+    height: 300px;
+    border: 1px solid blue;
+  }
+  // @media(max-width: 1080px) {
+  //     &__one, &__two {
+  //         display: flex;
+  //         flex-direction: column;
+  //         align-items: center;
+  //         justify-content: center;
+  //     }
+  // }
+  // &__one {
+  //     .image {
+  //         background-image: url('../../assets/img/bg-1.jpg');
+  //         background-size: cover;
+  //         background-repeat: no-repeat;
+  //         background-position: 50% 50%;
+  //         width: 50%;
+  //         filter: grayscale(80%);
+  //     }
+  // }
 
-        .desc {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+  // &__two {
+  //     .image {
+  //         background-image: url('../../assets/img/bg-2.jpg');
+  //         background-size: cover;
+  //         background-repeat: no-repeat;
+  //         background-position: 50% 50%;
+  //         width: 50%;
+  //         filter: grayscale(80%);
+  //     }
+  // }
+  // &__one, &__two {
+  //     height: 100vh;
+  //     width: 100%;
+  //     display: flex;
 
-            p {
-                width: 50ch;
-                margin-top: 15px;
-            }
+  //     .desc {
+  //         width: 50%;
+  //         display: flex;
+  //         flex-direction: column;
+  //         align-items: center;
+  //         justify-content: center;
 
-            button {
-                width: 100px;
-                height: 35px;
-                margin-top: 15px;
-                background: none;
-                border: 2px solid #6F6F6F;
-                margin-left: 20px;
-                cursor: pointer;
-                transition: .2s ease-in;
+  //         p {
+  //             width: 50ch;
+  //             margin-top: 15px;
+  //         }
 
-                &:hover {
-                    background-color: #6F6F6F;
-                    color: #fff;
-                }
-            }
+  //         button {
+  //             width: 100px;
+  //             height: 35px;
+  //             margin-top: 15px;
+  //             background: none;
+  //             border: 2px solid #6F6F6F;
+  //             margin-left: 20px;
+  //             cursor: pointer;
+  //             transition: .2s ease-in;
 
-            img {
-                // position: absolute;
-                // -webkit-transform: scaleX(-1);
-                // transform: scaleX(-1) translateY(50%) scale(1.2);
-                // left: 33%;
-            }
-        }
-    }
+  //             &:hover {
+  //                 background-color: #6F6F6F;
+  //                 color: #fff;
+  //             }
+  //         }
+
+  //         img {
+  //             // position: absolute;
+  //             // -webkit-transform: scaleX(-1);
+  //             // transform: scaleX(-1) translateY(50%) scale(1.2);
+  //             // left: 33%;
+  //         }
+  //     }
+  // }
 }

@@ -9,13 +9,13 @@ gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
   const scrollRef = useRef(null);
 
-  useEffect(() => {
-    const locoScroll = new LocomotiveScroll({
-      el: scrollRef.current,
-      smooth: true,
-      lerp: 0.08
-    });
-  }, []);
+  // useEffect(() => {
+  //   const locoScroll = new LocomotiveScroll({
+  //     el: scrollRef.current,
+  //     smooth: true,
+  //     lerp: 0.08
+  //   });
+  // }, []);
 
   return (
     <div className="smooth-scroller" ref={scrollRef} >
