@@ -1,0 +1,40 @@
+.galleryFooter {
+    height: 300px;
+    width: 100%;
+    background-image: linear-gradient(black, black),
+                    url('../../assets/bg-3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-blend-mode: saturation;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    p {
+        font-size: 3em;
+        color: orangered;
+        font-weight: bold;
+    }
+
+    &__btn {
+        a {
+            img {
+                cursor: pointer;
+            }
+            
+            margin-top: 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+            cursor: pointer;
+            color: #fff;
+        }
+    }
+
+    @media (max-width: 1080px) {
+        flex-direction: column;
+        text-align: center;
+    }
+}

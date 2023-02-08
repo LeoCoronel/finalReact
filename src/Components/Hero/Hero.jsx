@@ -34,13 +34,13 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="section copy">
+        {/* <div className="section copy">
           <div className="section__wrapper">
             <div className="content">
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis doloribus rem dolorem veniam, in impedit, laborum consequatur animi itaque odio veritatis obcaecati dolor voluptas numquam sit repudiandae delectus cumque sunt quo dolorum ipsa? Nisi, cumque odit itaque ducimus suscipit fugiat.</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
