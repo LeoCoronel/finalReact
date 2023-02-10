@@ -10,7 +10,7 @@ const Gallery = ({ position, img, bg, title, text }) => {
                 <img src={img} alt="shoe" className="shoe" />
                 <h2 className="gallery__desc__title">{title}</h2>
                 <p className="gallery__desc__text">{text}</p>
-                <a href="./" className="gallery__desc__button">
+                <a href="./shop" className="gallery__desc__button">
                     See more
                 </a>
             </div>

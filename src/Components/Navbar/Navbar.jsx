@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 import Logo from "../../assets/icons/Sneakers.png";
 import Cart from "../../assets/icons/Cart.png";
 import User from "../../assets/icons/User.png";
@@ -10,9 +11,9 @@ const Navbar = () => {
       <header className="header">
         {/* Navigation Logo */}
         <div className="header__logo">
-          <a href="#">
+          <Link to="/">
             <img src={Logo} alt="Sneakers Logo" />
-          </a>
+          </Link>
         </div>
         <nav className="header__nav">
           {/* Menu */}
@@ -25,10 +26,14 @@ const Navbar = () => {
             {/* Navigation Left */}
             <ul className="header__nav__links left">
               <li className="header__nav__links__item">
-                <a href="#">Home</a>
+                <NavLink to="/">
+                  Home
+                </NavLink>
               </li>
               <li className="header__nav__links__item">
-                <a href="./shop.html">Shop</a>
+              <NavLink to="/shop">
+                  Shop
+                </NavLink>
               </li>
             </ul>
             {/* Navigation Right */}

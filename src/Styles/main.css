@@ -60,14 +60,6 @@ select {
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@-webkit-keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.2);
-  }
-}
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -96,7 +88,6 @@ body {
   display: flex;
   position: relative;
   justify-content: space-around;
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -221,6 +212,24 @@ body {
   cursor: pointer;
 }
 
+.active {
+  --clippy: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.active::after {
+  position: absolute;
+  width: 28px;
+  content: "";
+  display: block;
+  background: orangered;
+  margin-top: 3px;
+  height: 3px;
+  -webkit-clip-path: var(--clippy);
+          clip-path: var(--clippy);
+  transition: -webkit-clip-path 0.5s;
+  transition: clip-path 0.5s;
+  transition: clip-path 0.5s, -webkit-clip-path 0.5s;
+}
+
 .footer {
   display: grid;
   place-content: center;
@@ -326,7 +335,7 @@ body {
 .galleryFooter {
   height: 300px;
   width: 100%;
-  background-image: linear-gradient(black, black), url("../../assets/bg-3.jpg");
+  background-image: linear-gradient(black, black), url("https://raw.githubusercontent.com/LeoCoronel/finalReact/master/src/assets/bg-3.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -461,6 +470,10 @@ p {
   line-height: 1.2em;
 }
 
+.sneakerCard {
+  border: 1px solid red;
+}
+
 .shop__shoes {
   width: 100%;
   display: grid;
@@ -529,10 +542,6 @@ p {
   margin-top: 10px;
 }
 .login__form form input::-moz-placeholder {
-  font-size: 0.8em;
-  padding: 10px;
-}
-.login__form form input:-ms-input-placeholder {
   font-size: 0.8em;
   padding: 10px;
 }
@@ -619,10 +628,6 @@ p {
   margin-top: 10px;
 }
 .register__form form input::-moz-placeholder {
-  font-size: 0.8em;
-  padding: 10px;
-}
-.register__form form input:-ms-input-placeholder {
   font-size: 0.8em;
   padding: 10px;
 }

@@ -136,3 +136,18 @@
     }
   }
 }
+
+.active {
+  &::after {
+    position: absolute;
+    width: 28px;
+    content: '';
+    display: block;
+    background: orangered;
+    margin-top: 3px;
+    height: 3px;
+    clip-path: var(--clippy);
+    transition: clip-path .5s;
+  }
+  --clippy: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}

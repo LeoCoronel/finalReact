@@ -6,7 +6,7 @@ const GalleryFooter = () => {
     <div className='galleryFooter'>
       <p>Want to see more shoes?</p>
       <div className="galleryFooter__btn">
-        <a href="#">
+        <a href="/shop">
           <img src={Arrow} alt="arrow" />
           Visit the shop!
         </a>
