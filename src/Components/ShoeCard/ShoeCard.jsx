@@ -1,15 +1,15 @@
-import React from 'react'
-
-const ShoeCard = ({shoe}) => {
+const ShoeCard = ({shoe, addToCart}) => {
     return (
-        <div class="sneakerCard glass" id="${id}">
-            <div> 
+        <div className="sneakerCard" id="${id}">
+            <div className='sneakerCard__image'> 
                 <img src={shoe.image ? shoe.image : "https://voax.co/img/noitem.png"} alt="shoe" />
-                <p class="sneakerCard__price">${shoe.price}</p>
+                <p>${shoe.price}</p>
             </div>
-            <div class="sneak__desc">
-                <p class="sneakerCard__name">{shoe.name}</p>
-                <button>Add to cart</button>
+            <div className="sneakerCard__desc">
+                <div className="sneakerCard__desc__name">
+                    <p>{shoe.name}</p>
+                </div>
+                <button onClick={() => addToCart(shoe.id)}>Add to cart</button>
             </div>
         </div>
     )

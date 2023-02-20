@@ -31,7 +31,7 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li className="header__nav__links__item">
-              <NavLink to="/shop">
+                <NavLink to="/shop">
                   Shop
                 </NavLink>
               </li>

@@ -1,3 +1,60 @@
 .sneakerCard {
-    border: 1px solid red;
+  width: 200px;
+  height: 250px;
+  background-color: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 5px;
+  border: 2px solid #6f6f6f;
+
+  &__image {
+    width: 200px;
+    height: 150px;
+    display: grid;
+    place-content: center;
+    position: relative;
+
+    img {
+      width: 150px;
+      height: 150px;
+    }
+
+    p {
+      font-size: 1em;
+      position: absolute;
+      bottom: 0;
+      left: 5px;
+    }
+  }
+
+  &__desc {
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &__name {
+      p {
+        font-size: 0.8em;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-left: 5px;
+      }
+    }
+
+    button {
+      height: 35px;
+      background: none;
+      border: none;
+      border-top: 2px solid #6f6f6f;
+      cursor: pointer;
+      transition: 0.2s ease-in;
+
+      &:hover {
+        background-color: #6f6f6f;
+        color: #fff;
+      }
+    }
+  }
 }
