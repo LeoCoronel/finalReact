@@ -1,14 +1,25 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ShoeCard from '../ShoeCard/ShoeCard';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchShoes } from '../../redux/slices/shoesSlice';
+import { addToCart } from '../../redux/slices/cartSlice';
 
 const GalleryShop = () => {
     const dispatch = useDispatch();
-    const shoes = useSelector((state) => state);
+    const shoes = JSON.parse(localStorage.getItem('shoes')) || useSelector((state) => state);    
+
+    const onAdd = (product) => {
+        dispatch(addToCart(product));
+    }
 
     useEffect(() => {
-        dispatch(fetchShoes());
+        if(!shoes) {
+            console.log("HAY QUE FETCHEAR")
+            dispatch(fetchShoes());
+        } else {
+            console.log("NO SE FETCHEA")
+        }
+        localStorage.setItem('shoes', JSON.stringify(shoes));
     }, [])
 
     return (
@@ -18,6 +29,7 @@ const GalleryShop = () => {
                     <ShoeCard 
                         key={shoe.id}
                         shoe={shoe}
+                        onAdd={onAdd}
                     />
                 )
             })}

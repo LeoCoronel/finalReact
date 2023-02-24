@@ -1,4 +1,4 @@
-const ShoeCard = ({shoe, addToCart}) => {
+const ShoeCard = ({shoe, onAdd}) => {
     return (
         <div className="sneakerCard" id="${id}">
             <div className='sneakerCard__image'> 
@@ -9,7 +9,7 @@ const ShoeCard = ({shoe, addToCart}) => {
                 <div className="sneakerCard__desc__name">
                     <p>{shoe.name}</p>
                 </div>
-                <button onClick={() => addToCart(shoe.id)}>Add to cart</button>
+                <button onClick={() => onAdd(shoe)}>Add to cart</button>
             </div>
         </div>
     )

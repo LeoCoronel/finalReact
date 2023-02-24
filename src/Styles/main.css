@@ -242,6 +242,75 @@ body {
   }
 }
 
+.cart__item {
+  width: 320px;
+  height: 100px;
+  border: 1px solid #343434;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 15px;
+}
+.cart__item img {
+  width: 50px;
+  height: 50px;
+}
+.cart__item__desc {
+  display: flex;
+  height: 100%;
+  width: 180px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.cart__item__desc p {
+  font-size: 0.8em;
+}
+.cart__item__desc .addOrSubstract {
+  display: flex;
+}
+.cart__item__desc .addOrSubstract button {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background: none;
+  border: 2px solid #6f6f6f;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.cart__item__desc .addOrSubstract button:hover {
+  background-color: #6f6f6f;
+  color: #fff;
+}
+.cart__item__desc .addOrSubstract p {
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-content: center;
+}
+.cart__item__total {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.cart__item__total p {
+  font-size: 0.8em;
+}
+.cart__item__total button {
+  background: none;
+  border: none;
+}
+.cart__item__total button img {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
 .left {
   flex-direction: row-reverse;
 }
@@ -495,6 +564,9 @@ p {
   color: #fff;
 }
 
+.shop {
+  margin: 50px 0;
+}
 .shop__shoes {
   width: 100%;
   display: grid;

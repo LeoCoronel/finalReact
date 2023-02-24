@@ -39,14 +39,14 @@ const Navbar = () => {
             {/* Navigation Right */}
             <ul className="header__nav__links right">
               <li className="header__nav__links__item">
-                <div className="header__cart">
+                <NavLink to="/cart" className="header__cart">
                   <img className="cart-logo" src={Cart} alt="Cart Logo" />
-                </div>
+                </NavLink>
               </li>
               <li className="header__nav__links__item">
-                <div className="header__login">
-                  <img src={User} alt="user Logo" />
-                </div>
+                <NavLink to="/user" className="header__login">
+                <img src={User} alt="user Logo" />
+                </NavLink>
               </li>
             </ul>
           </div>
