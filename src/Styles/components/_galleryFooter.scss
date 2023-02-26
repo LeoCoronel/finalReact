@@ -1,40 +1,63 @@
 .galleryFooter {
-    height: 300px;
-    width: 100%;
-    background-image: linear-gradient(black, black),
-                    url('https://raw.githubusercontent.com/LeoCoronel/finalReact/master/src/assets/bg-3.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-blend-mode: saturation;
+  height: 300px;
+  width: 100%;
+  background-image: linear-gradient(black, black),
+    url("https://raw.githubusercontent.com/LeoCoronel/finalReact/master/src/assets/bg-3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-blend-mode: saturation;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 
-    p {
-        font-size: 3em;
-        color: orangered;
-        font-weight: bold;
+  p {
+    font-size: 3em;
+    color: orangered;
+    font-weight: bold;
+  }
+
+  &__btn {
+    position: relative;
+    transition: all 500ms ease-in-out;
+
+    a {
+      z-index: 100;
+      img {
+        cursor: pointer;
+      }
+
+      margin-top: 15px;
+      text-decoration: none;
+      font-size: 1.2em;
+      cursor: pointer;
+      color: #fff;
+    }
+    &::after {
+      content: "";
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: orangered;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -10px;
+      opacity: 0.3;
+      transition: inherit;
     }
 
-    &__btn {
-        a {
-            img {
-                cursor: pointer;
-            }
-            
-            margin-top: 15px;
-            text-decoration: none;
-            font-size: 1.2em;
-            cursor: pointer;
-            color: #fff;
-        }
+    &:hover::after {
+      width: calc(100% + 20px);
+      border-radius: 20px;
+      cursor: pointer;
     }
+  }
 
-    @media (max-width: 1080px) {
-        flex-direction: column;
-        text-align: center;
-    }
+  @media (max-width: 1080px) {
+    flex-direction: column;
+    text-align: center;
+  }
 }

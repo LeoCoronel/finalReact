@@ -45,7 +45,7 @@ const Navbar = () => {
               </li>
               <li className="header__nav__links__item">
                 <NavLink to="/user" className="header__login">
-                <img src={User} alt="user Logo" />
+                  <img src={User} alt="user Logo" />
                 </NavLink>
               </li>
             </ul>

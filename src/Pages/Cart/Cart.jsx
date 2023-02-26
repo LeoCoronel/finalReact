@@ -7,6 +7,7 @@ import {
     increaseItemQty
 } from '../../redux/slices/cartSlice';
 import CartItem from '../../Components/CartItem/CartItem';
+import { NavLink } from 'react-router-dom';
 
 const Cart = () => {
     const { cart, totalPrice } = useSelector((state) => state.allCart);
@@ -31,16 +32,23 @@ const Cart = () => {
 
     return (
         <div className='cart'>
-            <p>Cart ${totalPrice}</p>
-            {cart.map((item) => {
-                return <CartItem 
-                        key={item.id} 
-                        shoe={item} 
-                        addItem={addItem}
-                        substractItem={substractItem}
-                        deleteItem={deleteItem}
-                        />
-            })}
+            <div className="cart__items">
+                {cart.map((item) => {
+                    return <CartItem 
+                            key={item.id} 
+                            shoe={item} 
+                            addItem={addItem}
+                            substractItem={substractItem}
+                            deleteItem={deleteItem}
+                            />
+                })}
+            </div>
+            <div className="cart__payment">
+                <p>Total: ${totalPrice}</p>
+                <NavLink to="/payment">
+                    <button>Payment</button>
+                </NavLink>
+            </div>
         </div>
     )
 }
