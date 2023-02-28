@@ -4,8 +4,11 @@ import Logo from "../../assets/icons/Sneakers.png";
 import Cart from "../../assets/icons/Cart.png";
 import User from "../../assets/icons/User.png";
 import Menu from "../../assets/icons/Menu.svg";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const user = useSelector(state => state.user);
+
   return (
     <>
       <header className="header">
@@ -44,9 +47,16 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li className="header__nav__links__item">
-                <NavLink to="/user" className="header__login">
+                
+                {!user.currentUser ?
+                <NavLink to='/user' className="header__login">
                   <img src={User} alt="user Logo" />
                 </NavLink>
+                :
+                <NavLink to='/user' className="header__login userLogged">
+                  <img src={user?.currentUser?.photoURL} alt="user Logo" />
+                </NavLink>
+              }
               </li>
             </ul>
           </div>

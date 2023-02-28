@@ -7,8 +7,6 @@ import { addToCart } from '../../redux/slices/cartSlice';
 const GalleryShop = () => {
     const dispatch = useDispatch();
     const shoes = localStorage.getItem('shoes') ? JSON.parse(localStorage.getItem('shoes')) : useSelector((state) => state.shoes.data);    
-    console.log("🚀 ~ file: GalleryShop.jsx:10 ~ GalleryShop ~ shoes:", shoes)
-
 
     const onAdd = (product) => {
         dispatch(addToCart(product));

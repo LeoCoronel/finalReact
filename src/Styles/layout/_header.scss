@@ -21,7 +21,8 @@
     align-items: center;
     width: 100%;
 
-    &__label, &__checkbox {
+    &__label,
+    &__checkbox {
       display: none;
     }
 
@@ -39,7 +40,7 @@
         &__item {
           margin: 15px;
           list-style: none;
-          transition: .2 ease-in;
+          transition: 0.2 ease-in;
           --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
           & a {
             color: #343434;
@@ -48,14 +49,14 @@
             cursor: pointer;
           }
           &::after {
-            content: '';
+            content: "";
             display: block;
             background: orangered;
             width: 50%;
             margin-top: 3px;
             height: 3px;
             clip-path: var(--clippy);
-            transition: clip-path .5s;
+            transition: clip-path 0.5s;
           }
           &:hover {
             --clippy: polygon(0 0, 100% 0, 100% 100%, 0 100%);
@@ -74,7 +75,7 @@
       }
     }
 
-    @media(max-width: 800px) {
+    @media (max-width: 800px) {
       justify-content: end;
       margin-right: 15px;
       &__label {
@@ -141,13 +142,13 @@
   &::after {
     position: absolute;
     width: 28px;
-    content: '';
+    content: "";
     display: block;
     background: orangered;
     margin-top: 3px;
     height: 3px;
     clip-path: var(--clippy);
-    transition: clip-path .5s;
+    transition: clip-path 0.5s;
   }
   --clippy: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
