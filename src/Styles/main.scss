@@ -5,7 +5,7 @@
 @import "layout/header", "layout/footer";
 
 @import "components/cartItem", "components/gallery", "components/galleryFooter",
-  "components/glass", "components/hero", "components/shoeCard",
+  "components/glass", "components/hero", "components/orderCard", "components/shoeCard",
   "components/shopShoes", "components/subtitle";
 
-@import "pages/about", "pages/cart", "pages/home", "pages/login", "pages/signup";
+@import "pages/about", "pages/cart", "pages/home", "pages/login", "pages/signup", "pages/user";

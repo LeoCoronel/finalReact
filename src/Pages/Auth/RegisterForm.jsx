@@ -1,16 +1,15 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup';
-import { signInUser, signInWithGoogle, createUserProfileDocument } from '../../firebase/firebase-utils';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { createUser, signInWithGoogle } from '../../firebase/firebase-utils';
+import { useLocation } from 'react-router-dom';
 import useRedirect from '../../hooks/useRedirect';
 import { NavLink } from 'react-router-dom';
 
-const LoginForm = () => {
-    const navigate = useNavigate();
-
+const RegisterForm = () => {
     const initialValues = {
         email: '', 
-        password: ''
+        password: '',
+        name: ''
     };
 
     const signInSchema = Yup.object().shape({
@@ -18,26 +17,23 @@ const LoginForm = () => {
         password: Yup.string()
             .required('Password is required')
             .min(4, 'Password is too short'),
+        name: Yup.string().required('Name is required')
     });
 
     const { state } = useLocation();
 
-    useRedirect('/');
+    useRedirect(state?.redirectedFromCheckout ? '/' : 'register');
 
     return (
         <Formik
             initialValues={initialValues}
             validationSchema={signInSchema}
-            onSubmit={async values => {
+            onSubmit={async (values, actions) => {
                 try {
-                    const {user} = await signInUser(values.email, values.password);
-                    createUserProfileDocument(user);
+                    await createUser(values.email, values.password, values.name)
                 } catch (error) {
-                    if(error.code === "auth/wrong-password") {
-                        alert("Wrong password");
-                    }
-                    if(error.code === "auth/user-not-found") {
-                        alert("User not found");
+                    if(error.code === "auth/email-already-in-use") {
+                        alert("This mail has already an account")
                     }
                 }
                 actions.resetForm();
@@ -47,7 +43,7 @@ const LoginForm = () => {
                 const { errors, touched, isValid, dirty } = formik;
                 return(
                     <div className='formContainer'>
-                        <h1>Sign in</h1>
+                        <h1>Register</h1>
                         <Form>
                             <div className='form__row'>
                                 <div className="fieldInput">
@@ -73,6 +69,18 @@ const LoginForm = () => {
                                 </div>
                                 <ErrorMessage name='password' component='span' className='error' />
                             </div>
+                            <div className='form__row'>
+                                <div className="fieldInput">
+                                    <label htmlFor="name">Name</label>
+                                    <Field 
+                                        type='text'
+                                        name='name'
+                                        id='name'
+                                        className={errors.name && touched.name ? 'input__error' : null}
+                                    />
+                                </div>
+                                <ErrorMessage name='name' component='span' className='error' />
+                            </div>
                             <div className="buttons">
                                 <button className='googleBtn' onClick={signInWithGoogle}>Google</button>
                                 <button
@@ -80,14 +88,11 @@ const LoginForm = () => {
                                     className={!(dirty && isValid) ? 'submitBtn disabledBtn' : 'submitBtn'}
                                     disabled={!(dirty && isValid)}
                                 >
-                                    Sign In
+                                    Sign Up
                                 </button>
                             </div>
-                            <NavLink to='/register' className="header__login">
-                                <p>Register</p>
-                            </NavLink>
-                            <NavLink to='/recovery' className="header__login">
-                                <p>I forgott my password</p>
+                            <NavLink to='/login' className="header__login">
+                                <p>Login</p>
                             </NavLink>
                         </Form>
                     </div>
@@ -97,4 +102,4 @@ const LoginForm = () => {
     )
 }
 
-export default LoginForm
+export default RegisterForm

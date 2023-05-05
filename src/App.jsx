@@ -13,6 +13,9 @@ import { useDispatch } from "react-redux";
 import { setCurrentUser } from "./redux/slices/userSlice";
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
 import User from "./Pages/User/User";
+import RegisterForm from "./Pages/Auth/RegisterForm";
+import RecoveryForm from "./Pages/Auth/RecoveryForm";
+import Payment from "./Pages/Payment/Payment";
 
 function onAuthStateChange(cb, action) {
   onAuthStateChanged(auth, async userAuth => {
@@ -46,6 +49,8 @@ function App() {
         <Route path='/cart' element={<Cart />} />
         <Route path='*' element={<NotFound />} />
         <Route path='login' element={<LoginForm />} />
+        <Route path='register' element={<RegisterForm/>} />
+        <Route path='recovery' element={<RecoveryForm/>} />
         <Route 
           path='/user'
           element={
@@ -58,7 +63,7 @@ function App() {
           path='/payment'
           element={
             <ProtectedRoute redirectTo='/login' >
-              <p>PAYMENT</p>
+              <Payment />
             </ProtectedRoute>
           }
         />
