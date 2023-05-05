@@ -12,7 +12,6 @@ const options = {
 
 // Action
 export const fetchShoes = createAsyncThunk("fetchShoes", async () => {
-  console.log("Fetch shoes");
   const res = await axios
     .request(options)
     .then(function (response) {
@@ -36,17 +35,12 @@ const shoesSlice = createSlice({
     builder.addCase(fetchShoes.fulfilled, (state, action) => {
       state.isLoading = false;
       state.data = action.payload;
-      console.log(
-        "🚀 ~ file: shoesSlice.js:39 ~ builder.addCase ~ state:",
-        state.data
-      );
       localStorage.setItem("shoes", JSON.stringify(state.data));
     });
     builder.addCase(fetchShoes.pending, (state, action) => {
       state.isLoading = true;
     });
     builder.addCase(fetchShoes.rejected, (state, action) => {
-      console.log("Error", action.payload);
       state.isError = true;
     });
   },

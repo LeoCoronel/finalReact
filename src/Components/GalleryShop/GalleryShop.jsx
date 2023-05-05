@@ -6,24 +6,22 @@ import { addToCart } from "../../redux/slices/cartSlice";
 
 const GalleryShop = () => {
   const dispatch = useDispatch();
-  const shoes = localStorage.getItem("shoes")
-    ? JSON.parse(localStorage.getItem("shoes"))
-    : useSelector((state) => state.shoes.data);
+
+  useEffect(() => {
+    dispatch(fetchShoes());
+  }, [dispatch]);
+
+  const shoes = useSelector((state) => state.shoes.data);
 
   const onAdd = (product) => {
     dispatch(addToCart(product));
   };
 
   useEffect(() => {
-    console.log("SHOES DAAT", shoes);
-    if (!shoes) {
-      console.log("HAY QUE FETCHEAR");
-      dispatch(fetchShoes());
-    } else {
-      console.log("NO SE FETCHEA");
+    if (shoes) {
+      localStorage.setItem("shoes", JSON.stringify(shoes));
     }
-    localStorage.setItem("shoes", JSON.stringify(shoes));
-  }, []);
+  }, [shoes]);
 
   return (
     <div className="shop__shoes">

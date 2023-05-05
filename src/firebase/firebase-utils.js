@@ -83,10 +83,6 @@ export const resetPassword = (email) =>
 
 // Create order
 export const createOrderDocument = async (order) => {
-  console.log(
-    "🚀 ~ file: firebase-utils.js:57 ~ createOrderDocument ~ order:",
-    order
-  );
   if (!order) return;
 
   const orderRef = doc(firestore, `orders/${order.orderId}`);

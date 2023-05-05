@@ -34,7 +34,6 @@ export const { getDataStart, getDataSuccess, getDataFailure } =
   firestoreSlice.actions;
 
 export const fetchData = () => async (dispatch) => {
-  console.log("BUSCANDO LA DATA");
   dispatch(getDataStart());
   try {
     const collectionRef = collection(db, "data");
